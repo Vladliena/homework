@@ -22,6 +22,7 @@ kiwiCountryPercent = 10;
 
 let applePricePercent = ((applePrice * appleCount)/100 * appleSalePercent).toFixed();
 let appleFinalPrice = applePrice*appleCount-applePricePercent;
+
 // code can be shorter if use appleSalePercent = 0.07 ==> (10*3) - (10*3) * 0.07 = 27.9//
 
 let orangePricePercent = ((orangePrice * orangeCount)/100 * orangeSalePercent).toFixed();
