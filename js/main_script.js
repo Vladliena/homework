@@ -8,21 +8,29 @@ let fullDate = date + '.' + month + '.' + year;
 const apple = `🍎`
 applePrice = 10
 appleCount = 3
-appleSalePercent = 0.7;
+appleSalePercent = 7;
 
 const orange = `🍊`
 orangePrice = 12
 orangeCount = 2
-orangeSalePercent = 0.3;
+orangeSalePercent = 3;
 
 const kiwi = `🥝`
 kiwiPrice = 15
 kiwiCount = 10
-kiwiCountryPercent = 0.10;
+kiwiCountryPercent = 10;
 
-let appleFinalPrice = ((applePrice - appleSalePercent) * appleCount).toFixed();
-let orangeFinalPrice = ((orangePrice - orangeSalePercent) * orangeCount).toFixed();
-let kiwiFinalPrice = (kiwiPrice * (1 + kiwiCountryPercent) * kiwiCount).toFixed();
+let applePricePercent = ((applePrice * appleCount)/100 * appleSalePercent).toFixed();
+let appleFinalPrice = applePrice*appleCount-applePricePercent;
+
+//
+
+let orangePricePercent = ((orangePrice * orangeCount)/100 * orangeSalePercent).toFixed();
+let orangeFinalPrice = orangePrice * orangeCount - orangePricePercent;
+
+let kiwiPricePercent = ((kiwiPrice * kiwiCount)/100 * kiwiCountryPercent).toFixed();
+let kiwiFinalPrice = kiwiPrice * kiwiCount + +kiwiPricePercent;
+
 
 let captionString = 'Food price ≠ '.replaceAll("≠", "-") + fullDate;
 console.log(captionString)
