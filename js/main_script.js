@@ -10,7 +10,6 @@ applePrice = 10
 appleCount = 3
 appleSalePercent = 0.7;
 
-
 const orange = `🍊`
 orangePrice = 12
 orangeCount = 2
