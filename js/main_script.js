@@ -22,8 +22,7 @@ kiwiCountryPercent = 10;
 
 let applePricePercent = ((applePrice * appleCount)/100 * appleSalePercent).toFixed();
 let appleFinalPrice = applePrice*appleCount-applePricePercent;
-
-//
+// code can be shorter if use appleSalePercent = 0.07 ==> (10*3) - (10*3) * 0.07 = 27.9//
 
 let orangePricePercent = ((orangePrice * orangeCount)/100 * orangeSalePercent).toFixed();
 let orangeFinalPrice = orangePrice * orangeCount - orangePricePercent;
@@ -40,9 +39,4 @@ console.log('Final price for', orangeCount + " " + orange + " = " + orangeFinalP
 console.log('Final price for', kiwiCount + " " + kiwi + " = " + kiwiFinalPrice + " " + 'UAH');
 
 console.log('Final price for all products =',+kiwiFinalPrice+ +orangeFinalPrice+ +appleFinalPrice + " " + 'UAH')
-
-
-
-
-
 
