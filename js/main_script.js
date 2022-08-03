@@ -25,9 +25,10 @@ const orangeFinalPrice = (orangeCount * orangePrice) - ((orangeCount * orangePri
 const kiwiFinalPrice = (kiwiCount * kiwiPrice) + ((kiwiCount * kiwiPrice) / divisionSumForTask * kiwiCountryPercent);
 
 const captionString = 'Food price ≠';
+const priceFor = captionString.replaceAll("≠", "for")
 
-console.log(`${captionString.replaceAll("≠", "-")} ${day}.${month}.${year}\n 
-${captionString.replaceAll("≠", "for")} ${appleCount} ${apple} = ${appleFinalPrice} UAH
-${captionString.replaceAll("≠", "for")} ${orangeCount} ${orange} = ${orangeFinalPrice} UAH
-${captionString.replaceAll("≠", "for")} ${kiwiCount} ${kiwi} = ${kiwiFinalPrice} UAH\n
-${captionString.replaceAll("≠", "for all products")} ${kiwiFinalPrice + orangeFinalPrice + appleFinalPrice} UAH`);
+console.log(`${captionString.replaceAll("≠", "-")} ${day}.${month}.${year}\n
+${priceFor} ${appleCount} ${apple} = ${appleFinalPrice} UAH
+${priceFor} ${orangeCount} ${orange} = ${orangeFinalPrice} UAH
+${priceFor} ${kiwiCount} ${kiwi} = ${kiwiFinalPrice} UAH\n
+${priceFor} all products ${kiwiFinalPrice + orangeFinalPrice + appleFinalPrice} UAH`);
