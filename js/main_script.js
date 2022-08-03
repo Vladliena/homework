@@ -1,4 +1,4 @@
-const date = new Date()
+const date = new Date();
 const day = date.getDate();
 const month = date.getMonth() + 1;
 const year = date.getFullYear();
@@ -24,10 +24,10 @@ const appleFinalPrice = (appleCount * applePrice) - ((appleCount * applePrice) /
 const orangeFinalPrice = (orangeCount * orangePrice) - ((orangeCount * orangePrice) / divisionSumForTask * orangeSalePercent).toFixed();
 const kiwiFinalPrice = (kiwiCount * kiwiPrice) + ((kiwiCount * kiwiPrice) / divisionSumForTask * kiwiCountryPercent);
 
-const captionString = 'Food price ≠'
+const captionString = 'Food price ≠';
 
 console.log(`${captionString.replaceAll("≠", "-")} ${day}.${month}.${year}\n 
 ${captionString.replaceAll("≠", "for")} ${appleCount} ${apple} = ${appleFinalPrice} UAH
 ${captionString.replaceAll("≠", "for")} ${orangeCount} ${orange} = ${orangeFinalPrice} UAH
 ${captionString.replaceAll("≠", "for")} ${kiwiCount} ${kiwi} = ${kiwiFinalPrice} UAH\n
-${captionString.replaceAll("≠", "for all products")} ${kiwiFinalPrice + orangeFinalPrice + appleFinalPrice} UAH`)
+${captionString.replaceAll("≠", "for all products")} ${kiwiFinalPrice + orangeFinalPrice + appleFinalPrice} UAH`);
