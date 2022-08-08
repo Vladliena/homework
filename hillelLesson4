@@ -1,21 +1,78 @@
-const hamburger = 10;
-const cheeseburger = 15;
-const doubleCheese = 5;
-let userChoice;
+const hamburger = "10 hamburger";
+const cheeseburger = "15 cheeseburger";
+const doubleCheese = "5 doublecheese";
+let userChoiceBulka;
 
-let order = prompt('hamburger or cheeseburger?')
+let bulka = prompt('hamburger or cheeseburger?')
 
-if (order === null || order === '' || order === hamburger)
+if (bulka === null || bulka === '' || bulka === 'hamburger') {
+    bulka = parseInt(hamburger);
+} else if (bulka === 'cheeseburger') {
+    bulka = parseInt(cheeseburger)
+    userChoiceBulka = confirm(`Would you like to add double cheese?`);
+}
+
+if (userChoiceBulka === true) {
+    bulka += parseInt(doubleCheese)
+} else (userChoiceBulka === false)
 {
-    order = hamburger;
+    bulka = parseInt(cheeseburger)
 }
-else (order === cheeseburger)
+
+
+const potatoSmall = "10 small";
+const potatoMiddle = "15 middle";
+const potatoBig = "20 big";
+let potatoSize;
+let potato;
+
+let userChoicePotato = confirm('Would you like potato?')
+
+if (userChoicePotato === true) {
+    potatoSize = prompt('Choose potato size: small,middle or big', )
+}
+if (potatoSize === null || potatoSize === '' || potatoSize === 'small') {
+    potato = parseInt(potatoSmall);
+} else if (potatoSize === 'middle') {
+    potato = parseInt(potatoMiddle)
+} else if (potatoSize === 'big') {
+    potato = parseInt(potatoBig)
+}
+if (userChoicePotato === false)
 {
-    userChoice = confirm(`Would you like to add double cheese?`);
+    potato = 0
 }
 
-if (userChoice === true){
-    order = cheeseburger + doubleCheese
+const ketchup = "2 ketchup";
+const mayonnaise = "3 mayonnaise";
+let sauce;
+
+let userChoiceSauce = confirm(`Would you like sauce?`)
+
+if (userChoiceSauce === true)
+{
+    sauce = prompt(`Choose sauce: ketchup/mayonnaise`)
 }
 
-console.log(order)
+if (sauce === 'ketchup' || sauce === '' || sauce === null){
+    sauce = parseInt(ketchup)
+} else if (sauce === 'mayonnaise')
+{
+    sauce = parseInt(mayonnaise)
+}
+
+if (userChoiceSauce === false){
+    sauce = 0
+}
+
+finalPrice = bulka+potato+sauce
+
+document.write(`<h2>Your order:</h2>
+	<ul>
+		<li>Bulka 🍔: <${bulka}> </li>
+		<li>Potato 🍟: <${potato}> </li>
+		<li>Sauce 🧂: <${(sauce)}></li>
+	</ul>
+
+	<p>Price: $<${finalPrice}> </p>
+`);
