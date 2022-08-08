@@ -1,0 +1,21 @@
+const hamburger = 10;
+const cheeseburger = 15;
+const doubleCheese = 5;
+let userChoice;
+
+let order = prompt('hamburger or cheeseburger?')
+
+if (order === null || order === '' || order === hamburger)
+{
+    order = hamburger;
+}
+else (order === cheeseburger)
+{
+    userChoice = confirm(`Would you like to add double cheese?`);
+}
+
+if (userChoice === true){
+    order = cheeseburger + doubleCheese
+}
+
+console.log(order)
