@@ -1,0 +1,56 @@
+let userName;
+let email;
+let surname;
+let birthYear;
+
+while (!userName) {
+    userName = prompt('What is your name?');
+    if (userName) userName = userName.trim();
+}
+if (userName) {
+    userName = userName.trim();
+    surname = prompt('What is your surname?');
+}
+
+while (!surname) {
+    surname = prompt('What is your surname?');
+    if (surname) surname = surname.trim();
+}
+if (surname) {
+    surname = surname.trim();
+    email = prompt('What is your email?');
+}
+
+while (!email || !email.includes('@') || email.startsWith('@') || email.endsWith('@')){
+    email = prompt('What is your email?');
+    if (email) email = email.trim().toLowerCase();
+}
+if (email) {
+    email = email.trim().toLowerCase();
+    birthYear = prompt('What is your birth date?');
+}
+
+while (!birthYear){
+    birthYear = prompt('What is your birth year?');
+    birthYear = birthYear.replaceAll(' ','')
+}
+if (birthYear){
+    birthYear = birthYear.replaceAll(' ','')
+}
+
+let age = new Date().getFullYear() - birthYear;
+
+document.write(`<ul>`)
+
+if (surname) {
+    document.write(`<li>Full Name: ${userName} ${surname}</li>`);
+}
+
+if (email) {
+    document.write(`<li>email: ${email}</li>`);
+}
+
+if (birthYear) {
+    document.write(`<li>Age: ${age}</li>`);
+}
+document.write(`</ul>`);
