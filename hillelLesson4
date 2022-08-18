@@ -1,0 +1,85 @@
+let finalPrice = 0;
+
+const hamburger = 10;
+const cheeseburger = 15;
+const doubleCheese = 5;
+
+
+let bulka = prompt('hamburger or cheeseburger?')
+if (bulka !== null) {
+    bulka = bulka.replaceAll(` `, ``).toLowerCase();
+}
+
+if (bulka === 'cheeseburger') {
+    finalPrice += cheeseburger
+    let userChoiceBulka = confirm(`Would you like to add double cheese?`);
+    if (userChoiceBulka) {
+        finalPrice += doubleCheese
+    }
+}
+else {
+    finalPrice += hamburger;
+    bulka = 'hamburger'
+}
+
+const potatoSmall = 10;
+const potatoMiddle = 15;
+const potatoBig = 20;
+
+let userChoicePotato = confirm('Would you like potato?');
+let potatoSize;
+if (userChoicePotato) {
+    potatoSize = prompt('Choose potato size: small,middle or big')
+    if (potatoSize !== null) {
+        potatoSize = potatoSize.replaceAll(` `, ``).toLowerCase();
+    }
+    if (potatoSize === 'small') {
+        finalPrice += potatoSmall;
+    } else {
+        finalPrice += potatoSmall;
+        potatoSize = 'small'
+    }
+    if (potatoSize === 'middle') {
+        finalPrice += potatoMiddle
+    }
+    if (potatoSize === 'big') {
+        finalPrice += potatoBig
+    }
+}
+
+const ketchup = 2;
+const mayonnaise = 3;
+let sauce;
+
+let userChoiceSauce = confirm(`Would you like sauce?`)
+if (userChoiceSauce) {
+    sauce = prompt(`Choose sauce: ketchup/mayonnaise`)
+    if (sauce !== null) {
+        sauce = sauce.replaceAll(` `, ``).toLowerCase();
+}
+    if (sauce === 'ketchup') {
+        finalPrice += ketchup
+    } else {
+        finalPrice += ketchup
+        sauce = 'ketchup'
+    }
+
+    if (sauce === 'mayonnaise') {
+        finalPrice += mayonnaise
+    }
+}
+
+document.write(`<h2>Your order:</h2>
+    <ul>
+        <li>Bulka 🍔: ${bulka}</li>`);
+if (userChoicePotato) {
+    document.write(`<li>Potato 🍟: ${potatoSize}</li>`);
+}
+
+if (userChoiceSauce) {
+    document.write(`<li>Sauce 🧂: ${sauce}</li>`);
+}
+
+document.write(`</ul>
+    <p>Price: $ ${finalPrice}</p>
+`);
